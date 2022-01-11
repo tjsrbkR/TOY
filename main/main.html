@@ -26,12 +26,15 @@
     </section>
     <section>
         <div class="center"> 
-            <div id="SelectedBox">
+            <div>
+                <img id="SelectedBox" src ="">
+                <strong id ="SelectAlt"></strong>
             </div>
         </div>
     </section>
 <script> 
-    let $SelectedBox = document.getElementById("SelectedBox")
+    let $SelectedBox = document.getElementById("SelectedBox");
+    let $SelectAlt = document.getElementById("SelectAlt");
     const Btngkstlr = document.getElementById("gkstlr");
     const Btnwndtlr = document.getElementById("wndtlr");
     const Btndlftlr = document.getElementById("dlftlr");
@@ -46,7 +49,7 @@
     //야식 버튼 이벤트
     ditlrBtnEvent();
     function ditlrBtnEvent(){
-        Btndidtlr.addEventListener("click",ditlrArray);
+        Btnditlr.addEventListener("click",ditlrArray);
     }
     //일식 버튼 이벤트
     dlftlrBtnEvent();
@@ -73,33 +76,57 @@
     function qnstlrArray(){
         let qnstlrselected = qnstlr[Math.floor(Math.random() * qnstlr.length)]
         let ImgSelected = qnstlrselected.img; 
-        console.log(ImgSelected);
-        $SelectedBox.innerHTML += `<img src ="ImgSelected">`;
+        let AltSelected = qnstlrselected.name;
+        $SelectedBox.setAttribute("src",ImgSelected);
+        $SelectedBox.setAttribute("width","300px");
+        $SelectedBox.setAttribute("height","300px");
+        // $SelectAlt.innerText += AltSelected;
+        // AltSelected = '';
     }
     //양식 랜덤선택 이벤트 
     function didtlArray(){
         let didtlrselected = didtlr[Math.floor(Math.random() * didtlr.length)]
-        console.log(didtlrselected);
+        let ImgSelected = didtlrselected.img; 
+        let AltSelected = didtlrselected.name;
+        $SelectedBox.setAttribute("src",ImgSelected);
+        $SelectedBox.setAttribute("width","300px");
+        $SelectedBox.setAttribute("height","300px");
     }
     //일식 랜덤선택 이벤트 
     function dlftlrArray(){
         let dlftlrselected = dlftlr[Math.floor(Math.random() * dlftlr.length)]
-        console.log(dlftlrselected);
+        let ImgSelected = dlftlrselected.img; 
+        let AltSelected = dlftlrselected.name;
+        $SelectedBox.setAttribute("src",ImgSelected);
+        $SelectedBox.setAttribute("width","300px");
+        $SelectedBox.setAttribute("height","300px");
     }
     //야식 랜덤선택 이벤트 
     function ditlrArray(){
         let ditlrselected = ditlr[Math.floor(Math.random() * ditlr.length)]
-        console.log(ditlrselected);
+        let ImgSelected = ditlrselected.img; 
+        let AltSelected = ditlrselected.name;
+        $SelectedBox.setAttribute("src",ImgSelected);
+        $SelectedBox.setAttribute("width","300px");
+        $SelectedBox.setAttribute("height","300px");
     }
     //한식 랜덤선택 이벤트 
     function gkstlrArray(){
         let gkstlrselected = gkstlr[Math.floor(Math.random() * gkstlr.length)]
-         console.log(gkstlrselected);
+        let ImgSelected = gkstlrselected.img; 
+        let AltSelected = gkstlrselected.name;
+        $SelectedBox.setAttribute("src",ImgSelected);
+        $SelectedBox.setAttribute("width","300px");
+        $SelectedBox.setAttribute("height","300px");
     }
     //중식 랜덤선택 이벤트 
     function wndtlrArray(){
         let wndtlrselected = wndtlr[Math.floor(Math.random() * wndtlr.length)]
-        console.log(wndtlrselected);
+        let ImgSelected = wndtlrselected.img; 
+        let AltSelected = wndtlrselected.name;
+        $SelectedBox.setAttribute("src",ImgSelected);
+        $SelectedBox.setAttribute("width","300px");
+        $SelectedBox.setAttribute("height","300px");
     }
 </script>
 </body>
