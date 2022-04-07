@@ -1,10 +1,35 @@
 const $input = document.getElementById("text");
-const $btn = document.getElementById("btn");
+const $btn = document.getElementById("submit");
 const $textBox = document.getElementById("textBox");
 const $try = document.getElementById("try");
+const $reflesh =document.getElementById("reflesh");
 let numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 let number = [];
-let Count = 0;
+let Count = 1;
+let life =11;
+
+
+$input.addEventListener("keyup", Enter);
+$btn.addEventListener("click", MakeNumber);
+
+$reflesh.addEventListener("click",()=>{
+    window.location.reload();
+    //페이지 새로고침
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function Clear() {
   //innerHTML 초기화
   $textBox.innerHTML = ``;
@@ -20,13 +45,9 @@ function gameStart() {
     number.push(selectedNum);
   }
 }
-
-$input.addEventListener("keyup", Enter);
-$btn.addEventListener("click", MakeNumber);
 function Enter(e) {
   //엔터키 입력시 텍스트값 판별
   if (e.keyCode === 13) {
-    Count++;
     console.log(Count);
     console.log(number);
     discrimination();
@@ -36,7 +57,6 @@ function Enter(e) {
 function MakeNumber(e) {
   //버튼 클릭시 텍스트값 판별
   e.preventDefault(); // 새로고침 못하게 하는 함수
-  Count++;
   console.log(Count);
   console.log(number);
   discrimination();
@@ -51,6 +71,14 @@ function wrong() {
     }
   }
 }
+function lifeCount(){
+    //남은 도전횟수 
+    Count++;
+    let nowlife =life - Count; 
+    $try.innerHTML += `남은 도전 횟수는 ` + nowlife + ` 회 입니다. `;
+    $input.value = ``;
+    $input.focus();
+}
 function discrimination() {
   //볼, 스트라이크 여부 판별
   Clear();
@@ -59,15 +87,22 @@ function discrimination() {
     $textBox.innerHTML += `Home Run`;
     $input.value = ``;
     $input.focus();
+    $try.innerHTML = ``;
+
+
   } else {
+    lifeCount();
     let answerList = answer.split("");
     let strike = 0;
     let ball = 0;
     for (let i = 0; i < 4; i++) {
+
       if (Number(answerList[i]) === number[i]) {
         strike += 1;
+
       } else if (number.indexOf(Number(answerList[i])) > -1) {
         ball += 1;
+
       }
     }
     $textBox.innerHTML += strike + ` Strike ` + ball + ` ball`;

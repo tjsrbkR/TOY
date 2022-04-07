@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Parcel Sandbox</title>
+    <title>숫자야구</title>
+    <link rel="stylesheet" href="../CSS/index.css" />
     <meta charset="UTF-8" />
   </head>
 
   <body>
-    <div id="app">
+    <div id="app" class="center">
       <h1>숫자야구</h1>
     </div>
-    <div>
-      <input type="text" id="text" />
-      <button type="button" id="btn">보내기</button>
+    <div class="center">
+      <input type="text" id="text" placeholder="정답 입력" />
+      <button type="button" id="submit" class="btn">보내기</button>
+      <button type="button" id="reflesh" class="btn">재시도</button>
     </div>
-    <div id="try"></div>
-    <div id="textBox"></div>
+    <div>
+      <div id="try" class="center"></div>
+      <div id="textBox" class="center"></div>
+    </div>
     <script src="../js/index.js"></script>
   </body>
 </html>
