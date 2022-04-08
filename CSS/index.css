@@ -6,3 +6,9 @@
 .btn{
     margin-left: 10px;
 }
+.note{
+    margin-top: 10px;
+    width: 200px;
+    height: 300px;
+    border:5px solid rgb(190, 175, 152);
+}
