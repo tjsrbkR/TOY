@@ -3,6 +3,8 @@ const $btn = document.getElementById("submit");
 const $textBox = document.getElementById("textBox");
 const $try = document.getElementById("try");
 const $reflesh =document.getElementById("reflesh");
+const $note = document.getElementById("note");
+
 let numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 let number = [];
 let Count = 1;
@@ -65,12 +67,13 @@ function MakeNumber(e) {
 function wrong() {
   //10번 이상 시도 했을때
   for (let i = 0; i < 10; i++) {
-    if (Count === 10) {
+    if (Count === 11) {
       $try.innerHTML += ` Game Over answer is: ` + number;
       Count = 0;
     }
   }
 }
+
 function lifeCount(){
     //남은 도전횟수 
     Count++;
@@ -85,13 +88,14 @@ function discrimination() {
   let answer = $input.value;
   if (answer === number.join("")) {
     $textBox.innerHTML += `Home Run`;
+    
     $input.value = ``;
     $input.focus();
     $try.innerHTML = ``;
 
 
   } else {
-    lifeCount();
+    console.log($input.value);
     let answerList = answer.split("");
     let strike = 0;
     let ball = 0;
@@ -106,6 +110,10 @@ function discrimination() {
       }
     }
     $textBox.innerHTML += strike + ` Strike ` + ball + ` ball`;
+    $note.innerHTML += $input.value + `<br>` + strike + ` Strike ` + ball + ` ball `+`<br>` ;
+
+    lifeCount();
+
   }
 }
 gameStart();
