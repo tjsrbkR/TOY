@@ -1,0 +1,24 @@
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mg10{
+    margin: 10px;
+}
+.mg10-L{
+    margin-left: 10px;
+}
+.mg10-R{
+    margin-right: 10px;
+}
+.Container{
+    padding: 100px;
+}
+.Contents{
+    width: 50%;
+    border: 5px solid black;
+    min-height: 50vh;
+    
+
+}
