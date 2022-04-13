@@ -45,4 +45,10 @@
     border: 1px solid #fbe7c6;
     padding: 0px 30px;
   }
+  li,ul{
+      list-style: none;
+      color: white;
+      font-family: "Last Ninja", Impact, 'Courier New', Courier, monospace;
+      font-size: 2.5rem;
   
+  }
