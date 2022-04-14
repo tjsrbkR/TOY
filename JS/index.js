@@ -18,21 +18,17 @@ function AddList(){
         return false;
     }
     $list.innerHTML +=  `<ul id="ul"><li class="">
-    <input type = "checkbox" id = "checkbox" name = checkbox> `+ $InputText.value +`<br></li> </ul>`;
+    <input type = "checkbox" id = "checkbox" name = "checkbox"> `+ $InputText.value +`<br></li> </ul>`;
     let $CheckBox = document.getElementsByName("checkbox");
-    
+    console.log($CheckBox);
     $InputText.value = '';
+    checkbox();
     ListHover();
 }
-function ListHover(event){
+function ListHover(){
     let $CheckBox = document.getElementsByName("checkbox");
     let $listitem = document.querySelectorAll("ul");
-    ListGroup.push($listitem);
-    for(let i =0; i< $CheckBox.length; i++){
-        if($CheckBox == true){
-            alert("123");
-        }
-    }
+   
 
     for(let i=0; i<$listitem.length; i++){
         $listitem[i].addEventListener("mouseover",()=>{
@@ -45,6 +41,17 @@ function ListHover(event){
 
         });
        
+    }
+}
+function checkbox(){
+    let $CheckBox = document.getElementsByName("checkbox");
+    for(let i =0; i< $CheckBox.length; i++){
+        if($CheckBox[i].checked != true){
+            alert("123");
+        }
+        else{
+            console.log("!@");
+        }
     }
 }
 
