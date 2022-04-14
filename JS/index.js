@@ -1,31 +1,34 @@
 const $InputText = document.getElementById("InputText");
 const $BtnAdd = document.getElementById("BtnAdd");
 const $list = document.getElementById("list");
+// const $ul = document.getElementById("ul");
+
 $BtnAdd.addEventListener("click",AddList);
 $InputText.addEventListener("keyup",Enter);
 let innerHTML = ``;
 let ListGroup = [];
-let listItem = document.querySelectorAll(ul);
-ul
 
 
 function AddList(){
     if($InputText.value === ''){
         return false;
     }
-    $list.innerHTML +=  `<li><ul> `+ $InputText.value +`<br> </ul></li>`;
+    $list.innerHTML +=  `<ul id="ul"><li> `+ $InputText.value +`<br></li> </ul>`;
     ListGroup.push($InputText.value);
-
-    for(let i=0; i<ListGroup.length; i++){
-        
-        ListGroup[i].
-
     $InputText.value = '';
+    let $listitem = document.querySelector("ul");
+    console.log($listitem);
+    $listitem.addEventListener("mouseover",()=>{
+        alert("123")
+    });
+
     console.log(ListGroup);
-    }
 }
 function ListGroupEvent(){
-    alert("!23");
+    alert("123");
+}
+function DeleteEvent(){
+    console.log("123");
 }
 function Enter(e){
     if(e.keyCode === 13){
@@ -35,3 +38,7 @@ function Enter(e){
 }
 
 
+
+// setTimeout(() => {
+
+// }, 5000);
