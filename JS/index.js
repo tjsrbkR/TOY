@@ -16,11 +16,23 @@ function AddList(){
     $list.innerHTML +=  `<ul id="ul"><li> `+ $InputText.value +`<br></li> </ul>`;
     ListGroup.push($InputText.value);
     $InputText.value = '';
-    let $listitem = document.querySelector("ul");
+    let $listitem = document.querySelectorAll("ul");
     console.log($listitem);
-    $listitem.addEventListener("mouseover",()=>{
-        alert("123")
-    });
+    for(let i=0; i<$listitem.length; i++){
+        $listitem[i].addEventListener("mouseover",()=>{
+            console.log("123");
+            $listitem[i].style.backgroundColor = "#46ebc7"
+        });
+        $listitem[i].addEventListener("mouseleave",()=>{
+            $listitem[i].style.backgroundColor = "#7d1ccc"
+        });
+        if($listitem.length === 10){
+        }
+    }
+    function ulHover(){
+        
+    }
+    
 
     console.log(ListGroup);
 }
@@ -36,7 +48,6 @@ function Enter(e){
     $InputText.focus();
     }
 }
-
 
 
 // setTimeout(() => {

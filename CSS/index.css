@@ -50,5 +50,8 @@
       color: white;
       font-family: "Last Ninja", Impact, 'Courier New', Courier, monospace;
       font-size: 2.5rem;
-  
+    
+  }
+  ul :hover(){
+      background-color: #7d1ccc;
   }
