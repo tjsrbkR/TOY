@@ -10,35 +10,44 @@ let ListGroup = [];
 
 
 function AddList(){
+    let $listitem = document.querySelectorAll("ul");
+    if($listitem.length >= 5){
+    return false;
+    }
     if($InputText.value === ''){
         return false;
     }
-    $list.innerHTML +=  `<ul id="ul"><li> `+ $InputText.value +`<br></li> </ul>`;
-    ListGroup.push($InputText.value);
+    $list.innerHTML +=  `<ul id="ul"><li class="">
+    <input type = "checkbox" id = "checkbox" name = checkbox> `+ $InputText.value +`<br></li> </ul>`;
+    let $CheckBox = document.getElementsByName("checkbox");
+    
     $InputText.value = '';
+    ListHover();
+}
+function ListHover(event){
+    let $CheckBox = document.getElementsByName("checkbox");
     let $listitem = document.querySelectorAll("ul");
-    console.log($listitem);
+    ListGroup.push($listitem);
+    for(let i =0; i< $CheckBox.length; i++){
+        if($CheckBox == true){
+            alert("123");
+        }
+    }
+
     for(let i=0; i<$listitem.length; i++){
         $listitem[i].addEventListener("mouseover",()=>{
-            console.log("123");
             $listitem[i].style.backgroundColor = "#46ebc7"
         });
         $listitem[i].addEventListener("mouseleave",()=>{
             $listitem[i].style.backgroundColor = "#7d1ccc"
         });
-        if($listitem.length === 10){
-        }
-    }
-    function ulHover(){
-        
-    }
-    
+        $listitem[i].addEventListener("click",()=>{
 
-    console.log(ListGroup);
+        });
+       
+    }
 }
-function ListGroupEvent(){
-    alert("123");
-}
+
 function DeleteEvent(){
     console.log("123");
 }
@@ -49,6 +58,7 @@ function Enter(e){
     }
 }
 
+ListHover();
 
 // setTimeout(() => {
 

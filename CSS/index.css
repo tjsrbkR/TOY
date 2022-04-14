@@ -55,3 +55,11 @@
   ul :hover(){
       background-color: #7d1ccc;
   }
+  .list-box{
+      width: 80%;
+      left: 0;
+  }
+  .checkbox{
+      width: 35px;
+      
+  }
