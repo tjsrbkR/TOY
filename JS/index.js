@@ -1,65 +1,38 @@
-const $InputText = document.getElementById("InputText");
-const $BtnAdd = document.getElementById("BtnAdd");
-const $list = document.getElementById("list");
-// const $ul = document.getElementById("ul");
-
-$BtnAdd.addEventListener("click",AddList);
-$InputText.addEventListener("keyup",Enter);
-let innerHTML = ``;
-let ListGroup = [];
-
-
+const $Input = document.getElementById("input");
+const $btn = document.getElementById("button");
+let $list = document.getElementById("list");
+let cnt = 1;
+$btn.addEventListener("click",AddList);
+$Input.addEventListener("keyup",Enter);
 function AddList(){
-    let $listitem = document.querySelectorAll("ul");
-    if($listitem.length >= 5){
-    return false;
+    let temp = document.createElement('li');
+    let $ListArray = document.querySelectorAll("li");
+    if($ListArray.length >= 5 ){
+        return false
     }
-    if($InputText.value === ''){
+    if($Input.value === ''){
         return false;
     }
-    $list.innerHTML +=  `<ul id="ul"><li class="">
-    <input type = "checkbox" id = "checkbox" name = checkbox> `+ $InputText.value +`<br></li> </ul>`;
-    let $CheckBox = document.getElementsByName("checkbox");
-    
-    $InputText.value = '';
-    ListHover();
-}
-function ListHover(event){
-    let $CheckBox = document.getElementsByName("checkbox");
-    let $listitem = document.querySelectorAll("ul");
-    ListGroup.push($listitem);
-    for(let i =0; i< $CheckBox.length; i++){
-        if($CheckBox == true){
-            alert("123");
-        }
-    }
-
-    for(let i=0; i<$listitem.length; i++){
-        $listitem[i].addEventListener("mouseover",()=>{
-            $listitem[i].style.backgroundColor = "#46ebc7"
-        });
-        $listitem[i].addEventListener("mouseleave",()=>{
-            $listitem[i].style.backgroundColor = "#7d1ccc"
-        });
-        $listitem[i].addEventListener("click",()=>{
-
-        });
-       
-    }
-}
-
-function DeleteEvent(){
-    console.log("123");
+    temp.innerHTML = input.value;
+    list.appendChild(temp);
+    console.log($ListArray.length);
+    temp.setAttribute("class", "list-group-item");
+    temp.setAttribute("id", "li"+cnt);
+    temp.innerHTML = input.value;
+    temp.innerHTML += "<button style='float: right;' class='btn btn-outline-secondary' type='button' onclick='remove("+cnt+")'>삭제</button>";
+    list.appendChild(temp);
+    cnt++;
+    $Input.focus();
+    $Input.value = '';
 }
 function Enter(e){
     if(e.keyCode === 13){
         AddList();
-    $InputText.focus();
+        $Input.focus();
     }
 }
-
-ListHover();
-
-// setTimeout(() => {
-
-// }, 5000);
+function remove(cnt) {
+    //window.alert(cnt);
+    let li = document.getElementById('li'+cnt);
+    $list.removeChild(li);
+  }

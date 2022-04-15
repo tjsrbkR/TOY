@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap');
+
+body {
+  font-family: 'Nanum Brush Script', cursive;
+}
+
 .center{
     display: flex;
     justify-content: center;
@@ -21,22 +27,14 @@
     min-height: 50vh;
     background: linear-gradient(192deg, #1d08d8, #b91ae0);
 }
-.Text{
-    color: white;
-    font-family: "Last Ninja", Impact, fantasy;
-    font-size: 3.5rem;
 
-}
 .Contents-box{
     padding-top: 130px;
 }
-.input__button {
-    background-color: transparent;
+.input-button {
     font-size: 30px;
     line-height: 60px;
     margin-left: 5px;
-    color: white;
-    border: 0;
   }
   .item {
     width: 300px;
@@ -45,11 +43,16 @@
     border: 1px solid #fbe7c6;
     padding: 0px 30px;
   }
-  li,ul{
-      list-style: none;
-      color: white;
-      font-family: "Last Ninja", Impact, 'Courier New', Courier, monospace;
-      font-size: 2.5rem;
+  ul{
+    
+  }
+  li{
+      display: flex;
+      align-items: center;
+    list-style: none;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: white;
     
   }
   ul :hover(){
@@ -63,3 +66,9 @@
       width: 35px;
       
   }
+button{
+    border-radius: 10px;
+    border: none;
+    background: none;
+    color: white;
+}
