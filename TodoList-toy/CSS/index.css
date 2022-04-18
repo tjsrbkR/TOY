@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap');
+
+body {
+  font-family: 'Nanum Brush Script', cursive;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mg10{
+    margin: 10px;
+}
+.mg10-L{
+    margin-left: 10px;
+}
+.mg10-R{
+    margin-right: 10px;
+}
+.Container{
+    padding: 100px;
+}
+.Contents{
+    width: 50%;
+    border: 5px solid black;
+    min-height: 50vh;
+    background: linear-gradient(192deg, #1d08d8, #b91ae0);
+}
+
+.Contents-box{
+    padding-top: 130px;
+}
+.input-button {
+    font-size: 30px;
+    line-height: 60px;
+    margin-left: 5px;
+  }
+  .item {
+    width: 300px;
+    height: 30px;
+    border-radius: 15px;
+    border: 1px solid #fbe7c6;
+    padding: 0px 30px;
+  }
+  ul{
+    
+  }
+  li{
+      display: flex;
+      align-items: center;
+    list-style: none;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: white;
+    
+  }
+  ul :hover(){
+      background-color: #7d1ccc;
+  }
+  .list-box{
+      width: 80%;
+      left: 0;
+  }
+  .checkbox{
+      width: 35px;
+      
+  }
+button{
+    border-radius: 10px;
+    border: none;
+    background: none;
+    color: white;
+}
