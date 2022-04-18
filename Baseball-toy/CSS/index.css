@@ -1,0 +1,14 @@
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn{
+    margin-left: 10px;
+}
+.note{
+    margin-top: 10px;
+    width: 200px;
+    height: 490px;
+    border:5px solid rgb(190, 175, 152);
+}
