@@ -56,3 +56,4 @@ const img = [
     }
 
 ]
+const imglink  =  "https://www.theguru.co.kr/data/photos/20190939/art_15695503957064_e8f18e.png";

@@ -1,24 +1,47 @@
-body{
-    height: 100vh;
-}
-
-.center{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.img{
+.container {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    gap: 10px;
+  }
+  .card {
+    width: 100px;
+    height: 150px;
+    margin: 0 auto;
+    perspective: 140px;
+  }
+  .card-inner {
+    position: relative;
     width: 100%;
     height: 100%;
-}
-.card-box{
-    width: 70%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  .card.flipped .card-inner {
+    transform: rotateY(180deg);
+  }
+  .card-front,
+  .card-back {
+    position: absolute;
+    width: 100%;
     height: 100%;
-    border: 10px solid black;
-}
-.card{
-    width: 500px;
-    height: 300px;
-    border: 5px solid red; 
-    margin: 15px;
-}
+    border: 1px solid #333;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+  }
+  .card-back {
+    transform: rotateY(180deg);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
