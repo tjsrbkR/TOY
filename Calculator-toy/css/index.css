@@ -6,3 +6,30 @@
 body{ 
     height: 80vh;
 }
+.Calculator{
+    width: 500px;
+    height: 80%;
+    border: 5px solid black;
+    border-radius: 5px; 
+}
+button{
+    width: 100px;
+    height: 30px;
+    margin:5px;
+}
+.hidden{
+    display: none;
+}
+#result{
+    width: 80%;
+    font-size: 1.5rem;
+    color: black;
+}
+.resultFiled{
+    margin: 30px;
+}
+#nowInput{
+    width: 60%;
+    margin-top: 15px;
+    font-size: 0.9rem;
+}

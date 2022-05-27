@@ -10,8 +10,38 @@
   <body>
     <container>
       <div class="center">
-        <div id="Calculator">
-          <div id="btnbox" class="center"></div>
+        <div class="Calculator">
+          <div class="center">
+            <input readonly type="text" id="nowInput" value="" />
+          </div>
+          <div class="resultFiled center">
+            <input readonly type="text" id="result" value="" />
+          </div>
+
+          <div class="line center">
+            <button type="button" value="1">1</button>
+            <button type="button" value="2">2</button>
+            <button type="button" value="3">3</button>
+            <button type="button" id="delete"><=</button>
+          </div>
+          <div class="line center">
+            <button type="button" value="4">4</button>
+            <button type="button" value="5">5</button>
+            <button type="button" value="6">6</button>
+            <button type="button" id="plus" value="+">+</button>
+          </div>
+          <div class="line center">
+            <button type="button" value="7">7</button>
+            <button type="button" value="8">8</button>
+            <button type="button" value="9">9</button>
+            <button type="button" id="minus" value="-">-</button>
+          </div>
+          <div class="line center">
+            <button type="button" id="multiplication" value="x">x</button>
+            <button type="button" value="0">0</button>
+            <button type="button" id="division" value="÷">÷</button>
+            <button type="button" id="total">=</button>
+          </div>
         </div>
       </div>
     </container>
