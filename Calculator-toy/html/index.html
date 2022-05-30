@@ -19,27 +19,63 @@
           </div>
 
           <div class="line center">
-            <button type="button" value="1">1</button>
-            <button type="button" value="2">2</button>
-            <button type="button" value="3">3</button>
+            <button
+              type="button"
+              id="minus"
+              value="-"
+              data-type="op"
+              data-cmd="del"
+            >
+              -
+            </button>
+            <button
+              type="button"
+              id="plus"
+              value="+"
+              data-type="op"
+              data-cmd="sum"
+            >
+              +
+            </button>
+            <button
+              type="button"
+              id="multiplication"
+              value="x"
+              data-type="op"
+              data-cmd="multiple"
+            >
+              x
+            </button>
+            <button
+              type="button"
+              id="division"
+              value="÷"
+              data-type="op"
+              data-cmd="division"
+            >
+              ÷
+            </button>
+
             <button type="button" id="delete"><=</button>
           </div>
           <div class="line center">
-            <button type="button" value="4">4</button>
-            <button type="button" value="5">5</button>
-            <button type="button" value="6">6</button>
-            <button type="button" id="plus" value="+">+</button>
+            <button type="button" value="1" data-type="digit">1</button>
+            <button type="button" value="2" data-type="digit">2</button>
+            <button type="button" value="3" data-type="digit">3</button>
+            <button type="button" value="4" data-type="digit">4</button>
           </div>
           <div class="line center">
-            <button type="button" value="7">7</button>
-            <button type="button" value="8">8</button>
-            <button type="button" value="9">9</button>
-            <button type="button" id="minus" value="-">-</button>
+            <button type="button" value="5" data-type="digit">5</button>
+            <button type="button" value="6" data-type="digit">6</button>
+            <button type="button" value="7" data-type="digit">7</button>
+            <button type="button" value="8" data-type="digit">8</button>
           </div>
           <div class="line center">
-            <button type="button" id="multiplication" value="x">x</button>
-            <button type="button" value="0">0</button>
-            <button type="button" id="division" value="÷">÷</button>
+            <button type="button" value="9" data-type="digit">9</button>
+            <button type="button" value="0" data-type="digit">0</button>
+            <button type="button" id="wja" value="." data-type="." data-cmd=".">
+              .
+            </button>
             <button type="button" id="total">=</button>
           </div>
         </div>
