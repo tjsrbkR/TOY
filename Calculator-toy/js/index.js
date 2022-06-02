@@ -15,27 +15,10 @@ const result = document.querySelector("#result");
         nowInput.value = nowInput.value.slice(0, -1);
     });
 
-function operatorClick(){
-    this.plus = "+";
-    this.minus = "-";
-    this.multiple = "*";
-    this.division = "÷";
-}
-
-// function Person() {}
-// Person.prototype.eyes = 2;
-// Person.prototype.nose = 1;
-// var kim  = new Person();
-// var park = new Person();
-// console.log(kim.eyes); // => 2
-const operatorClicked = (e) => {
+    const operatorClicked = (e) => {
     firstValue.push(parseFloat(result.value));
-    console.log(firstValue);
     coin = !coin; 
-    console.log(coin);
-
     result.value = '';
-
     const opButton = e.target; // 연산자 버튼임
     nowInput.value += e.target.value;
     if (flag) {
@@ -79,50 +62,71 @@ function msg() {
     }
 }
 // map 함수 사용 해서 배열 탐색
-
-const BtnTotal = document.getElementById("total").addEventListener("click",(e)=>{
+const BtnTotal = document.getElementById("total").addEventListener("click",()=>{
     SecondValue.push(parseFloat(result.value));
     const btnNumber = document.querySelectorAll(
         `.Calculator [data-type="op"]`
         );
-        console.log(btnNumber);
-        for(let i in btnNumber){
-            console.log(btnNumber[i].value)
-    switch(btnNumber[i].value){
-        case '+': 
-        console.log(firstValue[0]);
-        console.log(SecondValue[0]);
-            totalresult = firstValue[0] + SecondValue[0];
-            clear();    
-            firstValue.push(totalresult);
-            nowInput.value += totalresult;
-            result.value += totalresult;
-            break;
-        case '-':
-            totalresult = firstValue[0] - SecondValue[0];
-            clear();
-            firstValue.push(totalresult);
-            nowInput.value += totalresult;
-            result.value += totalresult;
-            break;
-        case 'x':
-            totalresult = firstValue[0] * SecondValue[0];
-            clear();
-            firstValue.push(totalresult);
-            nowInput.value += totalresult;
-            result.value += totalresult;
-            break;
-        case '÷':
-            totalresult = firstValue[0] / SecondValue[0];
-            clear();
-            firstValue.push(totalresult);
-            nowInput.value += totalresult;
-            result.value += totalresult;
-            break;
+        for(let i = 0; i < btnNumber.length; i++){
+        switch(btnNumber[i].value){
+            case "+":
+                clear();
+                totalresult = firstValue[0] + SecondValue[0];
+                firstValue.push(totalresult);
+                nowInput.value += totalresult;
+                result.value += totalresult;
+                break;
+            console.log(`This Item is : "${btnNumber[i].value}"`);
+            case "-": 
+                clear();
+                console.log(firstValue[0]);
+                console.log(SecondValue[0]);
+                firstValue.push(totalresult);
+                totalresult = firstValue[0] - SecondValue[0];
+                console.log(totalresult);
+                nowInput.value === totalresult;
+                result.value === totalresult;
+                break;
+            // case 'x':
+            //     totalresult = firstValue[0] * SecondValue[0];
+            //     clear();
+            //     firstValue.push(totalresult);
+            //     nowInput.value += totalresult;
+            //     result.value += totalresult;
+            //     break;
+            // case '÷':
+            //     totalresult = firstValue[0] / SecondValue[0];
+            //     clear();
+            //     firstValue.push(totalresult);
+            //     nowInput.value += totalresult;
+            //     result.value += totalresult;
+            //     break;
         }
+        const arr = ["+", "-", "*", "/"];
+
+// for (let i = 0; i < arr.length; i++) {
+//     console.log(`This Item is : "${arr[i]}"`)
+//     switch (arr[i]) {
+//         case  '+' :
+//             console.log('Plus!!');
+//             break;
+//         case  '-' :
+//             console.log('Minus!!');
+//             break;
+
+//         case  '*' :
+//             console.log('곱하기!!');
+//             break;
+//         case  '/' :
+//             console.log('나누기!!');
+//             break;
+//     }
+// }
     }
+
 });
     function clear(){
         result.value = '';
         nowInput.value ='';
+        totalresult = 0;
     }
