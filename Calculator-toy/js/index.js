@@ -61,7 +61,7 @@ function msg() {
         alert("연산자를 한번만 입력 하세요");
     }
 }
-// map 함수 사용 해서 배열 탐색
+
 const BtnTotal = document.getElementById("total").addEventListener("click",()=>{
     SecondValue.push(parseFloat(result.value));
     const btnNumber = document.querySelectorAll(
