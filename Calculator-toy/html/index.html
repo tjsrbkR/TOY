@@ -1,84 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/index.css" />
-    <title>Calculator</title>
+    <title>계산기</title>
   </head>
+  <link rel="stylesheet" href="../css/index.css" />
   <body>
-    <container>
-      <div class="center">
-        <div class="Calculator">
-          <div class="center">
-            <input readonly type="text" id="nowInput" value="" />
-          </div>
-          <div class="resultFiled center">
-            <input readonly type="text" id="result" value="" />
-          </div>
-
-          <div class="line center">
-            <button
-              type="button"
-              id="minus"
-              value="-"
-              data-type="op"
-              data-cmd="del"
-            >
-              -
-            </button>
-            <button
-              type="button"
-              id="plus"
-              value="+"
-              data-type="op"
-              data-cmd="sum"
-            >
-              +
-            </button>
-            <button
-              type="button"
-              id="multiplication"
-              value="x"
-              data-type="op"
-              data-cmd="multiple"
-            >
-              x
-            </button>
-            <button
-              type="button"
-              id="division"
-              value="÷"
-              data-type="op"
-              data-cmd="division"
-            >
-              ÷
-            </button>
-
-            <button type="button" id="delete"><=</button>
-          </div>
-          <div class="line center">
-            <button type="button" value="1" data-type="digit">1</button>
-            <button type="button" value="2" data-type="digit">2</button>
-            <button type="button" value="3" data-type="digit">3</button>
-            <button type="button" value="4" data-type="digit">4</button>
-          </div>
-          <div class="line center">
-            <button type="button" value="5" data-type="digit">5</button>
-            <button type="button" value="6" data-type="digit">6</button>
-            <button type="button" value="7" data-type="digit">7</button>
-            <button type="button" value="8" data-type="digit">8</button>
-          </div>
-          <div class="line center">
-            <button type="button" value="9" data-type="digit">9</button>
-            <button type="button" value="0" data-type="digit">0</button>
-            <button type="button" value="." data-type="digit">.</button>
-            <button type="button" id="total">=</button>
-          </div>
-        </div>
+    <div id="calc">
+      <div class="calc-sum">
+        <div class="calc-value"></div>
       </div>
-    </container>
+
+      <div class="calc-body">
+        <button value="AC">AC</button>
+        <button value="^">^</button>
+        <button value="%">%</button>
+        <button value="/">/</button>
+      </div>
+      <div class="calc-body">
+        <button value="7">7</button>
+        <button value="8">8</button>
+        <button value="9">9</button>
+        <button value="*">x</button>
+      </div>
+      <div class="calc-body">
+        <button value="4">4</button>
+        <button value="5">5</button>
+        <button value="6">6</button>
+        <button value="-">-</button>
+      </div>
+      <div class="calc-body">
+        <button value="1">1</button>
+        <button value="2">2</button>
+        <button value="3">3</button>
+        <button value="+">+</button>
+      </div>
+      <div class="calc-body">
+        <button value="0">0</button>
+        <button value="=">=</button>
+      </div>
+    </div>
   </body>
   <script src="../js/index.js"></script>
 </html>

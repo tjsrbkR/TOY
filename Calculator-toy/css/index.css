@@ -1,35 +1,38 @@
-.center {
+#calc {
+    width: 350px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
-body{ 
-    height: 80vh;
-}
-.Calculator{
-    width: 500px;
-    height: 80%;
-    border: 5px solid black;
-    border-radius: 5px; 
-}
-button{
-    width: 100px;
-    height: 30px;
-    margin:5px;
-}
-.hidden{
-    display: none;
-}
-#result{
-    width: 80%;
-    font-size: 1.5rem;
-    color: black;
-}
-.resultFiled{
-    margin: 30px;
-}
-#nowInput{
-    width: 60%;
-    margin-top: 15px;
-    font-size: 0.9rem;
-}
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 1em;
+  }
+
+  .calc-sum {
+    max-width: 350px;
+    padding: 1em;
+    display: flex;
+    justify-content: right;
+    background-color: rgb(129, 128, 128);
+    color: #ffffff;
+    font-size: 24px;
+  }
+
+  .calc-value {
+    text-align: right;
+  }
+  .calc-body {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .calc-body button {
+    width: 100%;
+    padding: 2em 1em;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid #dbdbdb;
+    cursor: pointer;
+  }
+  .calc-body button:hover{
+    background-color: rgb(133, 130, 130);
+    color: white;
+  }
