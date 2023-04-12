@@ -1,449 +1,764 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="https://image.istarbucks.co.kr/common/img/common/favicon.ico?v=200828" type="image/ico"> 
-    <link rel="stylesheet" type="text/css" href="./css/index.css">
-    <link rel="stylesheet" type="text/css" href="./css/reset.css">
-    <title>Starbucks Korea</title>
-    <style>
-        body{
-            /* background-color: #2C2A29; */
-        }
-        /* 헤더 영역 */
-        header{
-            background-color: #f6f5ef;
-            border-bottom: 1px solid #e5e5e5;
-            border-top: 2px solid #000;
-        }
-        
-        /* safe area */
-        .w1100{
-            width: 1100px;
-            margin: 0 auto;
-        }
-        /* gnb 영역 */
-        .gnb{
-            height: auto;
-        }
-        .serve_gnb{
-            position: relative;
-        }
-        .util_nav{
-            color: #333;
-            display: block;
-            font: normal 13px Avenir, Arial, georgia;
-            text-align: center;
-            width: 100%;
-            padding-right: 54px;
-            padding-top: 8px;
-            line-height: 2;
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link
+            rel="shortcut icon"
+            href="https://image.istarbucks.co.kr/common/img/common/favicon.ico?v=200828"
+            type="image/ico">
+        <link rel="stylesheet" type="text/css" href="./css/index.css">
+        <link rel="stylesheet" type="text/css" href="./css/reset.css">
+        <title>Starbucks Korea</title>
+        <style>
+            body {
+                /* background-color: #2C2A29; */
+            }
+            /* 헤더 영역 */
+            header {
+                background-color: #f6f5ef;
+                border-bottom: 1px solid #e5e5e5;
+                border-top: 2px solid #000;
+            }
+
+            /* safe area */
+            .w1100 {
+                width: 1100px;
+                margin: 0 auto;
+            }
+            /* gnb 영역 */
+            .gnb {
+                height: auto;
+            }
+            .serve_gnb {
+                position: relative;
+            }
+            .util_nav {
+                color: #333;
+                display: block;
+                font: normal 13px Avenir, Arial, georgia;
+                text-align: center;
+                width: 100%;
+                padding-right: 54px;
+                padding-top: 8px;
+                line-height: 2;
+
+            }
+            .sub_nav {
+                display: flex;
+                justify-content: right;
+                align-items: center;
+                color: #555;
+                margin-bottom: 15px;
+            }
+            .sub_nav li::after {
+                content: "|";
+                font-weight: 100;
+                opacity: 0.5;
+                margin-left: 30px;
+            }
+            .sub_nav li:last-child::after {
+                content: "";
+            }
+            .sub_nav::after {
+                display: block;
+                content: "";
+                width: 30px;
+                height: 30px;
+            }
+            .util_nav > ul > li {
+                padding-left: 15px;
+                padding-right: 15px;
+                font-size: 13px;
+                float: left;
+            }
+            .searchBtn {
+                width: 30px;
+                background-color: #fff;
+                border: 1px solid #908d8d;
+                border-radius: 5px;
+                text-align: center;
+                padding-top: 5px;
+                padding-bottom: 3px;
+                display: flex;
+                justify-content: center;
+            }
+            .Logo {
+                margin-top: 15px;
+            }
+            /* 네비게이션 */
+            .logo_var {
+                float: right;
+            }
+            .logo_var > ul {
+                display: flex;
+            }
+
+            .logo_var > ul > li {
+                height: 56px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            .logo_var > ul > li:hover {
+                background-color: #2C2A29;
+                color: #64a70b;
+
+            }
+            .logo_var > ul > li:hover .gnb_var {
+                transition: all 0.5s;
+            }
+
+            /* 로고 */
+            h1 {
+                float: left;
+            }
+            /* 마우스 호버시 gnb */
+            .coffe:hover .coffe_gnb,
+            .menu:hover .menu_gnb,
+            .news:hover .news_gnb,
+            .responstible:hover .responsibility_gnb,
+            .reward:hover .rewards_gnb,
+            .sale:hover .corporate_gnb,
+            .store:hover .store_gnb {
+                opacity: 1;
+                /* display: block; */
+                height: 300px;
+                z-index: 11;
+
+            }
+
+            .coffe:hover .gnb_tab li,
+            .menu:hover .gnb_tab li,
+            .news:hover .gnb_tab li,
+            .responstible:hover .gnb_tab li,
+            .reward:hover .gnb_tab li,
+            .sale:hover .gnb_tab li,
+            .store:hover .gnb_tab li {
+                opacity: 1;
+            }
+            .gnb_tab li {
+                opacity: 0;
+                transition: all 0.5s;
+            }
+            .gnb_var {
+                color: #fff;
+                font-size: 14px;
+                line-height: 3;
+                padding-top: 5px;
+                background-color: #2C2A29;
+                position: absolute;
+                width: 100%;
+                left: 0;
+                top: 112px;
+                text-align: left;
+                height: 0;
+                opacity: 0;
+                transition: all 0.5s;
+                z-index: -1;
+
+            }
+            .gnb_tab {
+                display: flex;
+            }
+            .gnb_tab li {
+                width: 220px;
+
+            }
+            .gnb_tab li ul li {
+                color: #999;
+                font-size: 12px;
+                line-height: 2;
+                cursor: pointer;
+
+            }
+            .gnb_tab li ul li:hover {
+                color: #fff;
+                transition: all 0.5s;
+            }
+            /* end gnb */
+            /* main loveUs 영역 */
+            .loveUs {
+                background-image: url("./images/mainBackGround.jpg");
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: cover;
+                z-index: -1;
+                margin: 0 auto;
+                height: 55vh;
+                width: 100%;
+            }
+            .loveImgbox,
+            .loveUsContainer {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                padding: 40px;
+
+            }
+            .main_Text {
+                position: absolute;
+                width: 20.83333333333333%;
+                left: 13%;
+                top: 40%;
+            }
+            .main_Text img {
+                width: 100%;
+            }
+            .btn_slogan {
+                position: absolute;
+                left: 20%;
+                top: 60%;
+                padding: 7px 15px;
+                border: 2px solid #007042;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            .btn_slogan:hover {
+                background-color: #007042;
+                color: #fff;
+                transition: all 0.5s;
+            }
+            .loveUsImg {
+                position: absolute;
+                width: 15.625%;
+                height: 40vh;
+            }
+            .loveUsImg:nth-child(1) {
+                left: 34%;
+                top: 5%;
+            }
+            .loveUsImg:nth-child(2) {
+                left: 47%;
+                top: 0;
+                height: 45vh;
+
+            }
+            .loveUsImg:nth-child(3) {
+                left: 59%;
+                top: 5%;
+            }
+            .loveUsImg img {
+                width: 100%;
+                height: 100%;
+            }
+            /* end main loveUs */
+            /* line_notive */
+            .line_notice {
+                display: flex;
+                justify-content: center;
+                align-content: center;
+            }
+            .line_notice_left {
+                width: 60%;
+                margin: 0 auto;
+                display: flex;
+                justify-content: right;
+                padding-right: 25px;
+                align-content: center;
+                background-color: #222;
+                line-height: 50px;
+            }
+            .line_notice_left h2 {
+                font-size: 16px;
+                color: #fff;
+            }
+            .notice {
+                width: 50%;
+                position: relative;
+                color: #fff;
+                margin-left: 15px;
+            }
+            .notice li {
+                position: absolute;
+                font-size: 14px;
+                opacity: 0;
+                cursor: pointer;
+            }
+            .line_notice_left i {
+                float: right;
+                font-size: 30px;
+                margin-top: 10px;
+                color: #fff;
+                cursor: pointer;
+            }
+            .line_notice_right {
+                width: 40%;
+            }
+            .on {
+                opacity: 1 !important;
+            }
+            .off {
+                opacity: 0 !important;
+            }
             
-        }
-        .sub_nav{
-            display: flex;
-            justify-content: right;
-            align-items: center;
-            color: #555;
-            margin-bottom: 15px;
-        }
-        .sub_nav::after{
-            display: block;
-            content: "";
-            width: 30px;
-            height: 30px;
-        }
-        .util_nav > ul > li{
-            padding-left: 15px;
-            padding-right: 15px;
-            font-size: 13px;
-            float: left;
-        }
-        .searchBtn{
-            width: 30px;
-            background-color: #fff;
-            border: 1px solid #908d8d;
-            border-radius: 5px;
-            text-align: center;
-            padding-top: 5px;
-            padding-bottom: 3px;
-            display: flex;
-            justify-content: center;
-        }
-        .Logo{
-            margin-top: 15px;
-        }
-        /* 네비게이션 */
-        .logo_var{
-            float: right;
-        }
-        .logo_var > ul{
-            display: flex;
-        }
-
-        .logo_var>ul>li{
-            height: 56px;
-            padding-left: 15px;
-            padding-right: 15px;
-        }
-        .logo_var >ul>li:hover{
-            background-color: #2C2A29;
-            color: #64a70b;
-        
-        }
-        .logo_var >ul>li:hover .gnb_var{
-            transition: all 0.5s;
-            height: 500px;
-        }
-        /* 로고 */
-        h1{
-            float: left;
-        }
-        /* 마우스 호버시 gnb */
-        .gnb_var{
-            color: #fff;
-            font-size: 14px;
-            line-height: 3;
-            padding-top: 5px;
-            background-color: #2C2A29;
-            position: absolute;
-            width: 100%;
-            left: 0;
-            top: 105px;
-            text-align: left;
-            display: none;
-        }
-        .gnb_tab{
-            display: flex;
-        }
-        .gnb_tab li{
-            width: 220px;
-
-        }
-        .gnb_tab li ul li{
-            color: #999;
-            font-size: 12px;
-            line-height: 2;
-            cursor: pointer;
-
-        }
-        .gnb_tab li ul li:hover{
-            color: #fff;
-            transition: all 0.5s;
-        }
-        
-    </style>
-</head>
-<body>
-    <header >
-        <div class="gnb">
-            <div class="w1100"> 
-                <nav class="util_nav cf">
-                    <h1 class="Logo"><img src="./images/logo.png" alt=""></h1>
-                    <ul class="sub_nav cf">
-                        <li>Sign In</li>
-                        <li>My Starbucks</li>
-                        <li>Customer Service & Ideas</li>
-                        <li>Find a Store</li>
-                        <li class="searchBtn">
-                            <img src="https://image.istarbucks.co.kr/common/img/common/icon_magnifier_black.png" alt="검색 이미지">
-                        </li>
-                    </ul>
-                    <div class="logo_var cf">
-                        <ul>
-                            <li class="coffe inner_tab">COFFE
-                                <div class="gnb_var">
-                                    <nav class="menu_tab w1100 coffe_gnb ">
-                                        <ul class="gnb_tab ">
-                                            <li>
-                                                커피
-                                                <ul>
-                                                    <li>스타벅스 원두</li>
-                                                    <li>스타벅스 비아</li>
-                                                    <li>스타벅스엣홈 by 캡슐</li>
-                                                    <li>나와 어울리는 커피</li>
-                                                </ul> 
-                                            </li>
-                                            <li>
-                                                커피 이야기
-                                                <ul>
-                                                    <li>농장에서 우리 손으로</li>
-                                                    <li>최상의 아라비카 원두</li>
-                                                    <li>스타벅스 로스트 스펙트럼</li>
-                                                    <li>스타벅스 디카페인</li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                스타벅스 리저브
-                                                <ul>
-                                                    <li>RESERVE MAGAZINE</li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                에스프레소 음료
-                                                <ul>
-                                                    <li>도피오</li>
-                                                    <li>에스프레소 마키아또</li>
-                                                    <li>아메리카노</li>
-                                                    <li>마키아또</li>
-                                                    <li>카푸치노</li>
-                                                    <li>라떼모카</li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                최상의 커피를 즐기는 법
-                                                <ul>
-                                                    <li>커피 프레스</li>
-                                                    <li>푸어 오버</li>
-                                                    <li>아이스 푸어 오버</li>
-                                                    <li>커피 메이커</li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </li>
-                            <li class="menu inner_tab">MENU
-                                <div class="gnb_var">
-                                    <nav class="menu_tab w1100 menu_gnb">
-                                        <ul class="gnb_tab ">
-                                            <li>
-                                                음료
-                                                <ul>
-                                                    <li>콜드 브루</li>
-                                                    <li>브루드 커피</li>
-                                                    <li>에스프레소</li>
-                                                    <li>프라푸치노</li>
-                                                    <li>블렌디드스타벅스 </li>
-                                                    <li>리프레셔스타벅스</li>
-                                                    <li>피지오티(티바나)</li>
-                                                    <li>기타 제조 음료</li>
-                                                    <li>스타벅스 주스(병음료)</li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                푸드
-                                                <ul>
-                                                    <li>브레드케이크</li>
-                                                    <li>샌드위치 &amp; 샐러드</li>
-                                                    <li>따뜻한 푸드</li>
-                                                    <li>과일 &amp; 요거트</li>
-                                                    <li>스낵 &amp; 미니 디저트 </li>
-                                                    <li>아이스크림</li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                상품
-                                                <ul>
-                                                    <li>머그</li>
-                                                    <li>글라스</li>
-                                                    <li>플라스틱 텀블러</li>
-                                                    <li>스테인리스 텀블러</li>
-                                                    <li>보온병 </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                액세서리
-                                                <ul>
-                                                    <li>선물세트</li>
-                                                    <li>커피 용품</li>
-                                                    <li>패키지 티(티바나)</li>
-                                                    <li>시럽</li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                카드
-                                                <ul>
-                                                    <li>실물카드e-Gift 카드</li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                메뉴 이야기
-                                                <ul>
-                                                    <li>스타벅스 </li>
-                                                    <li>티바나콜드</li>
-                                                    <li>브루나이트로 콜드브루</li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </li>
-                            <li class="store inner_tab">STORE
-                                <div class="gnb_var">
-                                    <nav class="menu_tab w1100 store_gnb">
-                                        <ul class="gnb_tab">
-                                            <li>
-                                                매장 찾기
-                                                <ul>
-                                                    <li>퀵 검색</li>
-                                                    <li>지역 검색</li>
-                                                </ul>
-                                            </li>
-                                            <li>드라이브 스루 매장</li>
-                                            <li>스타벅스 리저브 매장</li>
-                                            <li>커뮤니티 스토어 매장</li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </li>
-                            <li class="responstible inner_tab">RESPONSIBILITY
-                                <div class="gnb_var">
-                                    <nav class="menu_tab w1100 responsibility_gnb">
-                                        <ul class="gnb_tab ">
-                                            <li>사회공헌 캠페인 소개</li>
-                                            <li>
-                                                지역 사회 참여 활동
-                                                <ul>
-                                                    <li>희망배달 캠페인</li>
-                                                    <li>재능기부 카페 소식</li>
-                                                    <li>커뮤니티 스토어</li>
-                                                    <li>청년 지원 프로그램</li>
-                                                    <li>우리 농산물 사랑 캠페인</li>
-                                                    <li>우리 문화 지키기</li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                환경보호
-                                                <ul>
-                                                    <li>활동친환경 활동</li>
-                                                    <li>일회용 컵 없는 매장</li>
-                                                    <li>플라스틱 텀블러</li>
-                                                    <li>커피 원두 재활용</li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                윤리 구매
-                                                <ul>
-                                                    <li>윤리적 원두 구매</li>
-                                                    <li>공정무역 인증</li>
-                                                    <li>커피 농가 지원 활동</li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                글로벌 사회 공헌
-                                                <ul>
-                                                    <li>윤리경영 보고서</li>
-                                                    <li>스타벅스 재단</li>
-                                                    <li>지구촌 봉사의 달</li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </li>
-                            <li class="reward inner_tab">STARBUCKS REWARDS
-                                <div class="gnb_var">
-                                    <nav class="menu_tab w1100 rewards_gnb">
-                                        <ul class="gnb_tab ">
-                                            <li>
-                                                스타벅스 리워드
-                                                <ul>
-                                                    <li>스타벅스 리워드 소개</li>
-                                                    <li>등급 및 혜택</li>
-                                                    <li>스타벅스 별</li>
-                                                    <li>자주 하는 질문</li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                스타벅스 카드
-                                                <ul>
-                                                    <li>스타벅스 카드 소개</li>
-                                                    <li>스타벅스 카드 갤러리</li>
-                                                    <li>충전 및 이용안내</li>
-                                                    <li>분실신고/환불신청</li>
-                                                    <li>자주 하는 질문</li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                스타벅스 e-Gift Card
-                                                <ul>
-                                                    <li>스타벅스 e-Gift Card 소개</li>
-                                                    <li>이용안내</li>
-                                                    <li>선물하기</li>
-                                                    <li>자주 하는 질문</li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </li>
-                            <li class="sale inner_tab">CORPORATE SALES
-                                <div class="gnb_var">
-                                    <nav class="menu_tab w1100 corporate_gnb">
-                                        <ul class="gnb_tab">
-                                            <li>단체 및 기업 구매 안내</li>
-                                            <li>
-                                                단체 주문 배달 안내
-                                                <ul>
-                                                    <li>단체 주문 배달 안내</li>
-                                                    <li>스타벅스 카드 갤러리</li>
-                                                    <li>단체 주문 신청</li>
-                                                    <li>신청 내역 조회</li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </li>
-                            <li class="news inner_tab">WHAT'S NEW
-                                <div class="gnb_var">
-                                    <nav class="menu_tab w1100 news_gnb">
-                                        <ul class="gnb_tab">
-                                            <li>
-                                                이벤트
-                                                <ul>
-                                                    <li>전체</li>
-                                                    <li>스타벅스 카드</li>
-                                                    <li>스타벅스 리워드</li>
-                                                    <li>온라인</li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                뉴스
-                                                <ul>
-                                                    <li>전체</li>
-                                                    <li>상품 출시</li>
-                                                    <li>스타벅스와 문화</li>
-                                                    <li>스타벅스 사회공헌</li>
-                                                    <li>스타벅스 카드출시</li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                매장별 이벤트
-                                                <ul>
-                                                    <li>일반 매장</li>
-                                                    <li>신규 매장</li>
-                                                </ul>
-                                            </li>
-                                            <li>공지사항</li>
-                                            <li>월페이퍼</li>
-                                        </ul>
-                                    </nav>
-                                </div>
+            .slider {
+                width: 100px;
+                height: 100px;
+            }
+            .box {
+                text-align: center;
+                line-height: 100px;
+                font-size: 60px;
+                color: #fff;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <header >
+            <div class="gnb">
+                <div class="w1100">
+                    <nav class="util_nav cf">
+                        <h1 class="Logo"><img src="./images/logo.png" alt=""></h1>
+                        <ul class="sub_nav cf">
+                            <li>Sign In</li>
+                            <li>My Starbucks</li>
+                            <li>Customer Service & Ideas</li>
+                            <li>Find a Store</li>
+                            <li class="searchBtn">
+                                <img
+                                    src="https://image.istarbucks.co.kr/common/img/common/icon_magnifier_black.png"
+                                    alt="검색 이미지">
                             </li>
                         </ul>
-                    </div>
-                </nav>
+                        <div class="logo_var cf">
+                            <ul>
+                                <li class="coffe inner_tab">COFFE
+                                    <div class="gnb_var coffe_gnb">
+                                        <nav class="menu_tab w1100  ">
+                                            <ul class="gnb_tab ">
+                                                <li>
+                                                    커피
+                                                    <ul>
+                                                        <li>스타벅스 원두</li>
+                                                        <li>스타벅스 비아</li>
+                                                        <li>스타벅스엣홈 by 캡슐</li>
+                                                        <li>나와 어울리는 커피</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    커피 이야기
+                                                    <ul>
+                                                        <li>농장에서 우리 손으로</li>
+                                                        <li>최상의 아라비카 원두</li>
+                                                        <li>스타벅스 로스트 스펙트럼</li>
+                                                        <li>스타벅스 디카페인</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    스타벅스 리저브
+                                                    <ul>
+                                                        <li>RESERVE MAGAZINE</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    에스프레소 음료
+                                                    <ul>
+                                                        <li>도피오</li>
+                                                        <li>에스프레소 마키아또</li>
+                                                        <li>아메리카노</li>
+                                                        <li>마키아또</li>
+                                                        <li>카푸치노</li>
+                                                        <li>라떼모카</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    최상의 커피를 즐기는 법
+                                                    <ul>
+                                                        <li>커피 프레스</li>
+                                                        <li>푸어 오버</li>
+                                                        <li>아이스 푸어 오버</li>
+                                                        <li>커피 메이커</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </li>
+                                <li class="menu inner_tab">MENU
+                                    <div class="gnb_var menu_gnb">
+                                        <nav class="menu_tab w1100 ">
+                                            <ul class="gnb_tab ">
+                                                <li>
+                                                    음료
+                                                    <ul>
+                                                        <li>콜드 브루</li>
+                                                        <li>브루드 커피</li>
+                                                        <li>에스프레소</li>
+                                                        <li>프라푸치노</li>
+                                                        <li>블렌디드스타벅스
+                                                        </li>
+                                                        <li>리프레셔스타벅스</li>
+                                                        <li>피지오티(티바나)</li>
+                                                        <li>기타 제조 음료</li>
+                                                        <li>스타벅스 주스(병음료)</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    푸드
+                                                    <ul>
+                                                        <li>브레드케이크</li>
+                                                        <li>샌드위치 &amp; 샐러드</li>
+                                                        <li>따뜻한 푸드</li>
+                                                        <li>과일 &amp; 요거트</li>
+                                                        <li>스낵 &amp; 미니 디저트
+                                                        </li>
+                                                        <li>아이스크림</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    상품
+                                                    <ul>
+                                                        <li>머그</li>
+                                                        <li>글라스</li>
+                                                        <li>플라스틱 텀블러</li>
+                                                        <li>스테인리스 텀블러</li>
+                                                        <li>보온병
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    액세서리
+                                                    <ul>
+                                                        <li>선물세트</li>
+                                                        <li>커피 용품</li>
+                                                        <li>패키지 티(티바나)</li>
+                                                        <li>시럽</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    카드
+                                                    <ul>
+                                                        <li>실물카드e-Gift 카드</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    메뉴 이야기
+                                                    <ul>
+                                                        <li>스타벅스
+                                                        </li>
+                                                        <li>티바나콜드</li>
+                                                        <li>브루나이트로 콜드브루</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </li>
+                                <li class="store inner_tab">STORE
+                                    <div class="gnb_var store_gnb">
+                                        <nav class="menu_tab w1100 ">
+                                            <ul class="gnb_tab ">
+                                                <li>
+                                                    매장 찾기
+                                                    <ul>
+                                                        <li>퀵 검색</li>
+                                                        <li>지역 검색</li>
+                                                    </ul>
+                                                </li>
+                                                <li>드라이브 스루 매장</li>
+                                                <li>스타벅스 리저브 매장</li>
+                                                <li>커뮤니티 스토어 매장</li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </li>
+                                <li class="responstible inner_tab">RESPONSIBILITY
+                                    <div class="gnb_var responsibility_gnb">
+                                        <nav class="menu_tab w1100 ">
+                                            <ul class="gnb_tab ">
+                                                <li>사회공헌 캠페인 소개</li>
+                                                <li>
+                                                    지역 사회 참여 활동
+                                                    <ul>
+                                                        <li>희망배달 캠페인</li>
+                                                        <li>재능기부 카페 소식</li>
+                                                        <li>커뮤니티 스토어</li>
+                                                        <li>청년 지원 프로그램</li>
+                                                        <li>우리 농산물 사랑 캠페인</li>
+                                                        <li>우리 문화 지키기</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    환경보호
+                                                    <ul>
+                                                        <li>활동친환경 활동</li>
+                                                        <li>일회용 컵 없는 매장</li>
+                                                        <li>플라스틱 텀블러</li>
+                                                        <li>커피 원두 재활용</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    윤리 구매
+                                                    <ul>
+                                                        <li>윤리적 원두 구매</li>
+                                                        <li>공정무역 인증</li>
+                                                        <li>커피 농가 지원 활동</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    글로벌 사회 공헌
+                                                    <ul>
+                                                        <li>윤리경영 보고서</li>
+                                                        <li>스타벅스 재단</li>
+                                                        <li>지구촌 봉사의 달</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </li>
+                                <li class="reward inner_tab">STARBUCKS REWARDS
+                                    <div class="gnb_var rewards_gnb">
+                                        <nav class="menu_tab w1100 ">
+                                            <ul class="gnb_tab ">
+                                                <li>
+                                                    스타벅스 리워드
+                                                    <ul>
+                                                        <li>스타벅스 리워드 소개</li>
+                                                        <li>등급 및 혜택</li>
+                                                        <li>스타벅스 별</li>
+                                                        <li>자주 하는 질문</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    스타벅스 카드
+                                                    <ul>
+                                                        <li>스타벅스 카드 소개</li>
+                                                        <li>스타벅스 카드 갤러리</li>
+                                                        <li>충전 및 이용안내</li>
+                                                        <li>분실신고/환불신청</li>
+                                                        <li>자주 하는 질문</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    스타벅스 e-Gift Card
+                                                    <ul>
+                                                        <li>스타벅스 e-Gift Card 소개</li>
+                                                        <li>이용안내</li>
+                                                        <li>선물하기</li>
+                                                        <li>자주 하는 질문</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </li>
+                                <li class="sale inner_tab">CORPORATE SALES
+                                    <div class="gnb_var corporate_gnb">
+                                        <nav class="menu_tab w1100 ">
+                                            <ul class="gnb_tab ">
+                                                <li>단체 및 기업 구매 안내</li>
+                                                <li>
+                                                    단체 주문 배달 안내
+                                                    <ul>
+                                                        <li>단체 주문 배달 안내</li>
+                                                        <li>스타벅스 카드 갤러리</li>
+                                                        <li>단체 주문 신청</li>
+                                                        <li>신청 내역 조회</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </li>
+                                <li class="news inner_tab">WHAT'S NEW
+                                    <div class="gnb_var news_gnb">
+                                        <nav class="menu_tab w1100 ">
+                                            <ul class="gnb_tab ">
+                                                <li>
+                                                    이벤트
+                                                    <ul>
+                                                        <li>전체</li>
+                                                        <li>스타벅스 카드</li>
+                                                        <li>스타벅스 리워드</li>
+                                                        <li>온라인</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    뉴스
+                                                    <ul>
+                                                        <li>전체</li>
+                                                        <li>상품 출시</li>
+                                                        <li>스타벅스와 문화</li>
+                                                        <li>스타벅스 사회공헌</li>
+                                                        <li>스타벅스 카드출시</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    매장별 이벤트
+                                                    <ul>
+                                                        <li>일반 매장</li>
+                                                        <li>신규 매장</li>
+                                                    </ul>
+                                                </li>
+                                                <li>공지사항</li>
+                                                <li>월페이퍼</li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
             </div>
-        </div>
-    </header>
-    <script>
-        const inner_tab = document.querySelectorAll(".inner_tab");
-        const gnbVar = document.querySelectorAll(".gnb_var");
-        const serve_gnb = document.querySelector(".serve_gnb");
-        for(let i =0; i<inner_tab.length; i++){
-            inner_tab[i].addEventListener("mouseover",function(){  // 자식 요소인 상세 탭 까지 이벤트를 받기 위해 버블링
-                this.lastElementChild.style.display ="block";
-                this.lastElementChild.style.transtiion ="all 0.5s";
-            });
-            inner_tab[i].addEventListener("mouseout",function(e){ // 자식 요소인 상세 탭 까지 이벤트를 받기 위해 버블링
-                this.lastElementChild.style.display ="none";
-            });
+        </header>
+        <main role="main">
+            <article class="loveUs">
+                <div class="loveUsContainer w1100 cf">
+                    <div class="main_Text">
+                        <img src="./images/mainLoveUs.png"/>
+                    </div>
+                    <div class="loveImgbox">
+                        <div class="loveUsImg ">
+                            <img src="./images/tea.png" alt="티">
+                        </div>
+                        <div class="loveUsImg ">
+                            <img src="./images/latte.png" alt="라떼">
+                        </div>
+                        <div class="loveUsImg ">
+                            <img src="./images/blended.png" alt="블렌디드">
+                        </div>
+                    </div>
+                    <div class="btn_slogan">
+                        <div>자세히 보기</div>
+                    </div>
+                </div>
+            </article>
+        </main>
+        <section class="line_notice  ">
+            <div class="line_notice_left cf">
+                <h2>공지사항</h2>
+                <ul class="notice">
+                    <li class="on">시스템 개선 및 서비스 점검 안내</li>
+                    <li>탄소중립포인트 인센티브 지급 기준 안내</li>
+                    <li>스타벅스 코리아 샃핑 홈페이지 및 이메일 주의 안내</li>
+                    <li>Summer 시즌 사이렌 오더 음료 기본 설정 변경 안내</li>
+                </ul>
+                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+            </div>
+            <div class="line_notice_right">
+                <h2>스타벅스 프로모션</h2>
+            </div>
+        </section>
+        <section id="slider2" class="slider">
+            <div class="box" style="background-color: #ff0000;">1</div>
+            <div class="box" style="background-color: #ff0000;">2</div>
+            <div class="box" style="background-color: #ff0000;">3</div>
+            <div class="box" style="background-color: #ff0000;">4</div>
+            <div class="box" style="background-color: #ff0000;">5</div>
+        </section>
+    </body>
+        <script>
+        window.onload  = function(){
+            
+    function Slider(target, type) {
+  // 상태
+  let index = 1;
+  let isMoved = true;
+  const speed = 1000; // ms
+
+  // 방향
+  const transform = "transform " + speed / 1000 + "s";
+  let translate = (i) => "translateX(-" + 100 * i + "%)";
+  if (type === "V") {
+    translate = (i) => "translateY(-" + 100 * i + "%)";
+  }
+
+  // 슬라이더
+  const slider = document.querySelector(target);
+  const sliderRects = slider.getClientRects();
+  slider.style["overflow"] = "hidden";
+
+  // 슬라이더 화면 컨테이너
+  const container = document.createElement("div");
+  container.style["display"] = "flex";
+  container.style["flex-direction"] = type === "V" ? "column" : "row";
+  container.style["width"] = sliderRects.width + "px";
+  container.style["height"] = sliderRects.height + "px";
+  container.style["transform"] = translate(index);
+
+  // 슬라이더 화면 목록
+  let boxes = [].slice.call(slider.children);
+  boxes = [].concat(boxes[boxes.length - 1], boxes, boxes[0]);
+
+  // 슬라이더 화면 스타일
+  const size = boxes.length;
+  for (let i = 0; i < size; i++) {
+    const box = boxes[i];
+    box.style["flex"] = "none";
+    box.style["flex-wrap"] = "wrap";
+    box.style["height"] = "100%";
+    box.style["width"] = "100%";
+    container.appendChild(box.cloneNode(true));
+  }
+
+  // 처음/마지막 화면 눈속임 이벤트
+  container.addEventListener("transitionstart", function () {
+    isMoved = false;
+    setTimeout(() => {
+      isMoved = true;
+    }, speed);
+  });
+  container.addEventListener("transitionend", function () {
+    // 처음으로 순간이동
+    if (index === size - 1) {
+      index = 1;
+      container.style["transition"] = "none";
+      container.style["transform"] = translate(index);
+    }
+    // 끝으로 순간이동
+    if (index === 0) {
+      index = size - 2;
+      container.style["transition"] = "none";
+      container.style["transform"] = translate(index);
+    }
+  });
+
+  // 슬라이더 붙이기
+  slider.innerHTML = "";
+  slider.appendChild(container);
+
+  return {
+    move: function (i) {
+      if (isMoved === true) {
+        index = i;
+        container.style["transition"] = transform;
+        container.style["transform"] = translate(index);
+      }
+    },
+    next: function () {
+      if (isMoved === true) {
+        index = (index + 1) % size;
+        container.style["transition"] = transform;
+        container.style["transform"] = translate(index);
+      }
+    },
+    prev: function () {
+      if (isMoved === true) {
+        index = index === 0 ? index + size : index;
+        index = (index - 1) % size;
+        container.style["transition"] = transform;
+        container.style["transform"] = translate(index);
+      }
+    }
+  };
+}
+
+const s1 = new Slider("#slider1", "H");
+const s2 = new Slider("#slider2", "V");
+
+setInterval(() => {
+  s1.next();
+  s2.next();
+}, 1000)
         }
 
-    </script>
-</body>
+
+        </script>
 </html>
