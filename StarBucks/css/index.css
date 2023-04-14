@@ -7,11 +7,15 @@ header {
     background-color: #f6f5ef;
     border-bottom: 1px solid #e5e5e5;
     border-top: 2px solid #000;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
 }
 
 /* safe area */
 .w1100 {
-    width: 57.29166666666667%;
+    width: 59.29166666666667%;
     margin: 0 auto;
 }
 
@@ -156,11 +160,13 @@ h1 {
 .reward:hover .gnb_tab li,
 .sale:hover .gnb_tab li,
 .store:hover .gnb_tab li {
-    opacity: 1;
+    /* opacity: 1; */
+    display: block;
 }
 
 .gnb_tab li {
-    opacity: 0;
+    /* opacity: 0; */
+    display: none;
     transition: all 0.5s;
 }
 
@@ -356,6 +362,7 @@ h1 {
 
 .kind_wrap>.kind_slider .slider {
     transition: 0.5s;
+    z-index: -9999;
 }
 
 .arrow {
@@ -497,10 +504,180 @@ h1 {
 
 /* end reward */
 
-/* cherryBlossom */
+/* belend */
 .main-bean_wrap {
     background-image: url("../images/cherryblossom.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
+
+.main_bean_text {
+    color: #ef869a;
+
+}
+
+.main_bean_text h2 {
+    color: #e54360;
+    font-size: 30px;
+    line-height: 2;
+}
+
+.cherry_main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 25px;
+    width: 60%;
+}
+
+.notosanskr p:last-child {
+    padding: 5px 15px 10px 15px;
+    color: #e54360;
+    border: 2px solid #e54360;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 120px;
+    margin-top: 60px;
+}
+
+.notosanskr p:last-child:hover {
+    background-color: #ef869a;
+    border-color: #ef869a;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.5s;
+
+}
+
+/* end belend */
+
+/* costarica */
+.costaRica {
+    background-image: url("../images/costaRica.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-bottom: 30px;
+}
+
+.costaRica img {
+    width: 100%;
+
+}
+
+.costaRica_left img {
+    width: 80%;
+}
+
+.costaRica_contents {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 80%;
+    position: relative;
+}
+
+.costaRica_left {
+    width: 30%;
+    margin-right: 300px;
+    text-align: center;
+    z-index: 10;
+}
+
+.costaRica_right {
+    position: absolute;
+    width: 100%;
+    height: 32vh;
+    left: 4%;
+    top: 0;
+}
+
+.costaRica_right img {
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.costaRica p {
+    padding: 5px 15px 10px 15px;
+    color: #fff;
+    border: 2px solid #fff;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 120px;
+    margin-top: 40px;
+    margin-left: 38%;
+    z-index: 10;
+}
+
+.costaRica_left p:hover {
+    color: #fff;
+    cursor: pointer;
+    background-color: #7d5e2d;
+    transition: all 0.5s;
+
+}
+
+/* end costarica */
+
+/* favorite */
+.favorite {
+    background-image: url("../images/background_favorite.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 100px 0 100px 0;
+    height: 80vh;
+}
+
+.favorite_contents {
+    position: relative;
+}
+
+.favorite_left {
+    position: relative;
+}
+
+.favorite p {
+    padding: 5px 15px 10px 15px;
+    color: #fff;
+    border: 2px solid #fff;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 120px;
+    margin-top: 40px;
+    margin-left: 38%;
+    display: none;
+}
+
+.favorite p:hover {
+    color: #fff;
+    cursor: pointer;
+    background-color: #000;
+    transition: all 0.5s;
+}
+
+.favoriteVisual-text {
+    position: absolute;
+    /* left: 10vh; */
+    /* transform: translateX(100px); */
+}
+
+.favorite-text {
+    position: absolute;
+    /* left: -25vh; */
+    bottom: -45vh;
+
+}
+
+.favorite_right {
+    position: absolute;
+    right: -25%;
+}
+
+/* end favorite */
