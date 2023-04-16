@@ -680,4 +680,12 @@ h1 {
     right: -25%;
 }
 
+.visual-text1 {
+    left: 10vh;
+}
+
+.visual-text2 {
+    left: -25vh;
+}
+
 /* end favorite */
