@@ -11,11 +11,17 @@
             rel="shortcut icon"
             href="https://image.istarbucks.co.kr/common/img/common/favicon.ico?v=200828"
             type="image/ico">
-            
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="./css/index.css">
-        <link rel="stylesheet" type="text/css" href="./css/font.css">
-        <link rel="stylesheet" type="text/css" href="./css/reset.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <link rel="stylesheet" type="text/css" href="./css/index.css">
+            <link rel="stylesheet" type="text/css" href="./css/font.css">
+            <link rel="stylesheet" type="text/css" href="./css/reset.css">
+            <link rel="stylesheet" type="text/css" href="./css/header.css">
+            <link rel="stylesheet" type="text/css" href="./css/blend.css">
+            <link rel="stylesheet" type="text/css" href="./css/costarica.css">
+            <link rel="stylesheet" type="text/css" href="./css/favorite.css">
+            <link rel="stylesheet" type="text/css" href="./css/love-us.css">
+            <link rel="stylesheet" type="text/css" href="./css/reward.css">
+            <link rel="stylesheet" type="text/css" href="./css/notice.css">
         <title>Starbucks Korea</title>
         <style>
             .visual-text{
@@ -24,10 +30,23 @@
                 margin-left: 95px;
                 margin-bottom: 25px;
             }
-            .favorite_contents{
+            .favorite-contents{
                 display: flex;
             }
+            * {
+                box-sizing: border-box;
+            }
 
+            body{
+                background-color: #414141;
+            }
+
+
+.active {
+    /* left: 50%; */
+    left: 100px;
+    transition: all 1s;
+}
             
         </style>
     </head>
@@ -35,9 +54,9 @@
         <header >
             <div class="gnb">
                 <div class="w1100">
-                    <nav class="util_nav cf">
+                    <nav class="util-nav cf">
                         <h1 class="Logo"><img src="./images/logo.png" alt=""></h1>
-                        <ul class="sub_nav cf">
+                        <ul class="sub-nav cf">
                             <li>Sign In</li>
                             <li>My Starbucks</li>
                             <li>Customer Service & Ideas</li>
@@ -48,12 +67,12 @@
                                     alt="검색 이미지">
                             </li>
                         </ul>
-                        <div class="logo_var cf">
+                        <div class="logo-var cf">
                             <ul>
                                 <li class="coffe inner_tab">COFFE
-                                    <div class="gnb_var coffe_gnb">
+                                    <div class="gnb-var coffegnb">
                                         <nav class="menu_tab w1100  ">
-                                            <ul class="gnb_tab ">
+                                            <ul class="gnb-tab ">
                                                 <li>
                                                     커피
                                                     <ul>
@@ -103,9 +122,9 @@
                                     </div>
                                 </li>
                                 <li class="menu inner_tab">MENU
-                                    <div class="gnb_var menu_gnb">
+                                    <div class="gnb-var menu_gnb">
                                         <nav class="menu_tab w1100 ">
-                                            <ul class="gnb_tab ">
+                                            <ul class="gnb-tab ">
                                                 <li>
                                                     음료
                                                     <ul>
@@ -173,9 +192,9 @@
                                     </div>
                                 </li>
                                 <li class="store inner_tab">STORE
-                                    <div class="gnb_var store_gnb">
+                                    <div class="gnb-var store_gnb">
                                         <nav class="menu_tab w1100 ">
-                                            <ul class="gnb_tab ">
+                                            <ul class="gnb-tab ">
                                                 <li>
                                                     매장 찾기
                                                     <ul>
@@ -191,9 +210,9 @@
                                     </div>
                                 </li>
                                 <li class="responstible inner_tab">RESPONSIBILITY
-                                    <div class="gnb_var responsibility_gnb">
+                                    <div class="gnb-var responsibility_gnb">
                                         <nav class="menu_tab w1100 ">
-                                            <ul class="gnb_tab ">
+                                            <ul class="gnb-tab ">
                                                 <li>사회공헌 캠페인 소개</li>
                                                 <li>
                                                     지역 사회 참여 활동
@@ -236,9 +255,9 @@
                                     </div>
                                 </li>
                                 <li class="reward inner_tab">STARBUCKS REWARDS
-                                    <div class="gnb_var rewards_gnb">
+                                    <div class="gnb-var rewards_gnb">
                                         <nav class="menu_tab w1100 ">
-                                            <ul class="gnb_tab ">
+                                            <ul class="gnb-tab ">
                                                 <li>
                                                     스타벅스 리워드
                                                     <ul>
@@ -272,9 +291,9 @@
                                     </div>
                                 </li>
                                 <li class="sale inner_tab">CORPORATE SALES
-                                    <div class="gnb_var corporate_gnb">
+                                    <div class="gnb-var corporate_gnb">
                                         <nav class="menu_tab w1100 ">
-                                            <ul class="gnb_tab ">
+                                            <ul class="gnb-tab ">
                                                 <li>단체 및 기업 구매 안내</li>
                                                 <li>
                                                     단체 주문 배달 안내
@@ -290,9 +309,9 @@
                                     </div>
                                 </li>
                                 <li class="news inner_tab">WHAT'S NEW
-                                    <div class="gnb_var news_gnb">
+                                    <div class="gnb-var news_gnb">
                                         <nav class="menu_tab w1100 ">
-                                            <ul class="gnb_tab ">
+                                            <ul class="gnb-tab ">
                                                 <li>
                                                     이벤트
                                                     <ul>
@@ -340,34 +359,34 @@
                     <img src="./images/fixed2.png" alt="">
                 </div>
             </div>
-            <article class="loveUs">
-                <div class="loveUsContainer w1100 cf">
-                    <div class="main_Text">
+            <article class="love-us">
+                <div class="love-us-container w1100 cf">
+                    <div class="main-text">
                         <img src="./images/mainLoveUs.png"/>
                     </div>
-                    <div class="loveImgbox">
-                        <div class="loveUsImg ">
+                    <div class="love-img-box">
+                        <div class="love-us-img ">
                             <img src="./images/tea.png" alt="티">
                         </div>
-                        <div class="loveUsImg ">
+                        <div class="love-us-img ">
                             <img src="./images/latte.png" alt="라떼">
                         </div>
-                        <div class="loveUsImg ">
+                        <div class="love-us-img ">
                             <img src="./images/blended.png" alt="블렌디드">
                         </div>
                     </div>
-                    <div class="btn_slogan">
+                    <div class="btn-slogan">
                         <div>자세히 보기</div>
                     </div>
                 </div>
             </article>
         </main>
-        <section class="line_notice  ">
-            <div class="line_notice_left cf">
+        <section class="line-notice  ">
+            <div class="line-notice-left cf">
                 <h2>공지사항</h2>
                 <div class="benner">
-                    <div class="kind_wrap">
-                        <div class="kind_slider">
+                    <div class="kind-wrap">
+                        <div class="kind-slider">
                             <ul class="slider">
                                 <li class="on">시스템 개선 및 서비스 점검 안내</li>
                                 <li>탄소중립포인트 인센티브 지급 기준 안내</li>
@@ -383,34 +402,34 @@
                 </div>
                 <i class="fa fa-plus-circle" aria-hidden="true"></i>
             </div>
-            <div class="line_notice_right">
+            <div class="line-notice-right">
                 <h2>스타벅스 프로모션</h2>
                 <p>
                     <img src="./images/btn_prom_down.png">
                 </p>
             </div>
         </section>
-        <section class="new-rewards_wrap">
-            <div class="w1100 main_reward cf">
-                <div class="main_reward_img">
+        <section class="new-rewards-wrap ">
+            <div class="w1100 main-reward cf">
+                <div class="main-reward-img">
                     <img src="./images/starbucksRewards.png" alt="">
                 </div>
-                <div class="main_reward_join">
-                    <div class="main_reward_register cf">
-                        <div class="reward_msg">
+                <div class="main-reward-join">
+                    <div class="main-reward-register cf">
+                        <div class="reward-msg">
                             <h2>스타벅스만의 특별한 혜택,<span>스타벅스 리워드</span></h2>
                             <p>
                                 <span>스타벅스 회원이세요?</span>&nbsp;로그인을 통해 나만의 리워드를 확인해보세요.</p>
                             <p>
                                 <span>스타벅스 회원이 아니세요?</span>&nbsp;가입을 통해 리워드 혜택을 즐기세요.</p>
                         </div>
-                        <div class="reward_btn">
+                        <div class="reward-btn">
                             <div>회원가입</div>
                             <div>로그인</div>
                         </div>
                     </div>
-                    <div class="reward_gift">
-                        <div class="reward_gift_text">
+                    <div class="reward-gift">
+                        <div >
                             <p>회원 가입 후, 스타벅스 e-Gift Card를
                                 <span>"나에게 선물하기"로 구매하시고, 편리하게 등록하세요!</span></p>
                             <p>카드를 등록하여 스타벅스 리워드 회원이 되신 후, 첫 구매를 하시면 무료 음료쿠폰을 드립니다!</p>
@@ -422,12 +441,12 @@
                 </div>
             </div>
         </section>
-        <section class="main-bean_wrap">
-            <div class="w1100 cherry_main">
+        <section class="main-bean-wrap">
+            <div class="w1100 cherry-main">
                 <div>
                     <img src="./images/cherryBlend.png" alt="">
                 </div>
-                <div class="main_bean_text notosanskr">
+                <div class="main-bean-text notosanskr">
                     <p>다크 체리의 풍미로 시작하는 봄
                     </p>
                     <h2>스프링 시즌 블렌드 250g</h2>
@@ -438,34 +457,58 @@
             </div>
         </section>
         <section class="costaRica">
-            <div class="w1100 cf costaRica_contents ">
-                <div class="costaRica_left">
+            <div class="w1100 cf costaRica-contents ">
+                <div class="costaRica-left">
                     <img src="./images/costaRicaText.png" alt="">
                     <p>자세히 보기</p>
                 </div>
-                <div class="costaRica_right">
+                <div class="costaRica-right">
                     <img src="./images/costaRicaCoffe.png" alt="">
                 </div>
             </div>
         </section>
         <section class="favorite">
-            <div class="w1100 favorite_contents">
+
+            <div class="w1100 favorite-contents">
                 <div class="favorite_left">
-                    <div class="favoriteVisual-text">
+                    <div class="favoriteVisual-text box">
                         <img src="./images/favorite_visual.png" alt="비쥬얼 이미지">
                     </div>
-                    <div class="favorite-text">
+                    <div class="favorite-text box">
                         <img src="./images/favorite_text.png" alt="">
                     </div>
                     <p>자세히 보기</p>
                 </div>
-                <div class="favorite_right">
+                <div class="favorite-right">
                     <img src="./images/background_favoriteImg.png" alt="">
                 </div>
             </div>
         </section>
+        <section>
+    
+        </section>
     </body>
     <script>
+        // const visualText = document.querySelector(".")
+        const boxes = document.querySelectorAll('.box');
+        const option = {
+        root: null, //viewport
+        rootMargin: '0px',
+        threshold: 0.5,  // 50%가 viewport에 들어와 있어야 callback 실행
+        }
+        const callback = (entries, observer) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+            entry.target.classList.add('active');
+            } else {
+            entry.target.classList.remove('active');
+            }
+        });
+        };
+        const observer = new IntersectionObserver(callback, option);
+        boxes.forEach(box => observer.observe(box));
+    </script>
+    <!-- <script>
         function checkVisible( element, check = 'above' ) {
             const viewportHeight = $(window).height(); // Viewport Height
             const scrolltop = $(window).scrollTop(); // Scroll Top
@@ -498,6 +541,6 @@
 
         // 스크롤 이벤트 등록
         window.addEventListener('scroll', func);
-    </script>
+    </script> -->
     <script src="./js/idenx.js"></script>
 </html>

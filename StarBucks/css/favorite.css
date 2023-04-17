@@ -1,0 +1,80 @@
+/* favorite */
+.favorite {
+    height: 80vh;
+    width: 100%;
+}
+
+.favorite::after {
+    width: 100%;
+    height: 100%;
+    display: block;
+    content: "";
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+    /* 공통 배경이미지 속성 */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    /* 배경이미지 고정 */
+    background-image: url("../images/background_favorite.jpg");
+}
+
+
+.favorite-contents {
+    position: relative;
+}
+
+.favorite_left {
+    position: relative;
+    top: 10vh;
+}
+
+.favorite p {
+    padding: 5px 15px 10px 15px;
+    color: #fff;
+    border: 2px solid #fff;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 120px;
+    margin-top: 40px;
+    margin-left: 38%;
+    display: none;
+}
+
+.favorite p:hover {
+    color: #fff;
+    cursor: pointer;
+    background-color: #000;
+    transition: all 0.5s;
+}
+
+.favoriteVisual-text {
+    position: absolute;
+    left: -10vh;
+    /* transform: translateX(100px); */
+}
+
+.favorite-text {
+    position: absolute;
+    left: -40vh;
+    bottom: -45vh;
+
+}
+
+.favorite-right {
+    position: absolute;
+    right: -25%;
+    top: 10vh;
+
+}
+
+.visual-text1 {
+    left: 10vh;
+}
+
+.visual-text2 {
+    left: -25vh;
+}
+
+/* end favorite */

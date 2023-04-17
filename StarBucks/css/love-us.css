@@ -1,0 +1,77 @@
+/* main loveUs 영역 */
+.love-us {
+    background-image: url("../images/mainBackGround.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    z-index: -1;
+    margin: 0 auto;
+    height: 55vh;
+    width: 100%;
+}
+
+.love-img-box,
+.lov-us-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+
+}
+
+.main-text {
+    position: absolute;
+    width: 20.83333333333333%;
+    left: 13%;
+    top: 40%;
+}
+
+.main-text img {
+    width: 100%;
+}
+
+.btn-slogan {
+    position: absolute;
+    left: 20%;
+    top: 60%;
+    padding: 7px 15px;
+    border: 2px solid #007042;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-slogan:hover {
+    background-color: #007042;
+    color: #fff;
+    transition: all 0.5s;
+}
+
+.love-us-img {
+    position: absolute;
+    width: 15.625%;
+    height: 40vh;
+}
+
+.love-us-img:nth-child(1) {
+    left: 34%;
+    top: 5%;
+}
+
+.love-us-img:nth-child(2) {
+    left: 47%;
+    top: 0;
+    height: 45vh;
+
+}
+
+.love-us-img:nth-child(3) {
+    left: 59%;
+    top: 5%;
+}
+
+.love-us-img img {
+    width: 100%;
+    height: 100%;
+}
+
+/* end main loveUs */

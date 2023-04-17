@@ -1,0 +1,49 @@
+/* belend */
+.main-bean-wrap {
+    background-image: url("../images/cherryblossom.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.main-bean-text {
+    color: #ef869a;
+
+}
+
+.main-bean-text h2 {
+    color: #e54360;
+    font-size: 30px;
+    line-height: 2;
+}
+
+.cherry-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 25px;
+    width: 60%;
+}
+
+.notosanskr p:last-child {
+    padding: 5px 15px 10px 15px;
+    color: #e54360;
+    border: 2px solid #e54360;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 120px;
+    margin-top: 60px;
+}
+
+.notosanskr p:last-child:hover {
+    background-color: #ef869a;
+    border-color: #ef869a;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.5s;
+
+}
+
+/* end belend */

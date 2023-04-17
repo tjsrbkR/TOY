@@ -1,0 +1,112 @@
+/* notice_left */
+.line-notice {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+}
+
+.line-notice-left {
+    width: 55%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: right;
+    padding-right: 25px;
+    align-content: center;
+    background-color: #000;
+    position: relative;
+    padding-top: 5px;
+}
+
+.line-notice-left h2 {
+    font-size: 20px;
+    position: absolute;
+    left: 30%;
+    top: 15px;
+    padding-top: 5px;
+    color: #fff;
+}
+
+.notice {
+    width: 50%;
+    position: relative;
+    color: #fff;
+    margin-left: 15px;
+}
+
+.notice li {
+    position: absolute;
+    font-size: 14px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.line-notice-left i {
+    float: right;
+    font-size: 30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* benner slider */
+.benner {
+    padding-top: 15px;
+    position: absolute;
+    left: 35%;
+    width: 50%;
+    z-index: 9999;
+
+}
+
+.kind-wrap {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.kind-wrap>.kind-slider {
+    overflow: hidden;
+}
+
+.kind-wrap>.kind-slider .slider {
+    transition: 0.5s;
+    z-index: -9999;
+}
+
+.arrow {
+    display: none;
+}
+
+.kind-slider {
+    height: 25px;
+}
+
+.slider li {
+    color: #fff;
+    width: 470px;
+    height: 25px;
+}
+
+/* end notice_left  */
+/* notice_Right */
+.line-notice-right {
+    width: 45%;
+    line-height: 2.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 250px;
+}
+
+.line-notice-right h2 {
+    color: #000;
+    font-weight: 900;
+    margin-right: 30px
+}
+
+/* end notice_Right */
